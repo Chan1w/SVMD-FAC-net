@@ -99,7 +99,6 @@ for K in [1,2,3,4,5]:
 
     Exp = Exp_Main
 
-    # 定义三个不同的数据集
     datasets = ['svmd2_{}.csv'.format(battery), 'svmd3_{}.csv'.format(battery), 'svmd1_{}.csv'.format(battery)]
     # datasets = [ 'svmd1_{}.csv'.format(battery)]
     if args.method == 'no':
@@ -115,10 +114,8 @@ for K in [1,2,3,4,5]:
 
         set_seed(42)
 
-        # 初始化实验
         exp = Exp(args)
 
-        # 训练
         print(f'<<<<<<<<<<<<<<<<<<<<<<<<< Training on {dataset} >>>>>>>>>>>>>>>>>>>>>>>>>')
         results = exp.train()
 
@@ -208,6 +205,7 @@ for K in [1,2,3,4,5]:
 
     folder_path = args.results_path + args.model_id + '/'
     draw_SOH(final_results, args.seq_len, folder_path, args.battery_name)
+
 
 
 
